@@ -1,8 +1,9 @@
+#!/usr/bin/python
+
 # class for mqtt connection
 __author__ = 'cygairko'
 
 import json
-
 import config
 import paho.mqtt.client as mqtt
 import light
