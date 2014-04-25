@@ -9,5 +9,5 @@ SCOPE = "light"
 
 #Topics
 MQTT_REGISTER_TOPIC = "home/server/register"
-MQTT_REQUEST_TOPIC = "home/" + SCOPE + "/" + DEVICE_ID + "/request"
-MQTT_RESPONSE_TOPIC = "home/" + SCOPE + "/" + DEVICE_ID + "/response"
+MQTT_REQUEST_TOPIC = "home/request/" + SCOPE + "/" + DEVICE_ID
+MQTT_RESPONSE_TOPIC = "home/response/" + SCOPE + "/" + DEVICE_ID

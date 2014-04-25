@@ -60,10 +60,10 @@ class Led:
 
         return True
 
-    def printcolor(self):
+    def printColor(self):
         print("r g b :", self.red, self.green, self.blue)
 
-    def getcolor(self):
+    def getColor(self):
         return [self.red, self.green, self.blue]
 
 

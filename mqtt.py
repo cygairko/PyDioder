@@ -32,10 +32,10 @@ def on_message(mosq, obj, msg):
             led.setcolor(red, green, blue)
 
             # send ACK
-            mosq.publish(config.MQTT_RESPONSE_TOPIC, json.dumps({'response': 'ackColor', 'color': decoded['color']}), config.MQTT_QOS)
+            mosq.publish(config.MQTT_RESPONSE_TOPIC, messageString, config.MQTT_QOS)
 
         if (decoded['function'] == "getColor"):
-            colors = led.getcolor()
+            colors = led.getColor()
             mosq.publish(config.MQTT_RESPONSE_TOPIC, json.dumps({'response': 'getColor', 'color': [colors[0], colors[1], colors[2]]}), config.MQTT_QOS)
 
 
