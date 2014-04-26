@@ -29,7 +29,7 @@ def on_message(mosq, obj, msg):
             red = int(decoded['color'][0])
             green = int(decoded['color'][1])
             blue = int(decoded['color'][2])
-            led.setcolor(red, green, blue)
+            led.setColor(red, green, blue)
 
             # send ACK
             mosq.publish(config.MQTT_RESPONSE_TOPIC, messageString, config.MQTT_QOS)

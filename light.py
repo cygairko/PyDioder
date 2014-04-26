@@ -44,9 +44,9 @@ class Led:
         self._red_pwm.start(0)
         self._green_pwm.start(0)
         self._blue_pwm.start(0)
-        Led.setcolor(self, 0, 0, 0)
+        Led.setColor(self, 0, 0, 0)
 
-    def setcolor(self, red_in, green_in, blue_in):
+    def setColor(self, red_in, green_in, blue_in):
         # update internal color values
         self.red = red_in
         self.green = green_in
