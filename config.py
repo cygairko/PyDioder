@@ -6,8 +6,9 @@ MQTT_PORT = 1883
 MQTT_QOS = 2
 DEVICE_ID = "raspi0"
 SCOPE = "light"
+SERVER_ID = "server0"
 
 #Topics
-MQTT_REGISTER_TOPIC = "home/server/register"
+MQTT_REGISTER_TOPIC = "home/register/" + SERVER_ID
 MQTT_REQUEST_TOPIC = "home/request/" + SCOPE + "/" + DEVICE_ID
 MQTT_RESPONSE_TOPIC = "home/response/" + SCOPE + "/" + DEVICE_ID
