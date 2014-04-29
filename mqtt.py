@@ -6,6 +6,7 @@ __author__ = 'cygairko'
 import json
 import signal
 import sys
+import time
 
 import config
 import paho.mqtt.client as mqtt
@@ -64,9 +65,8 @@ def on_disconnect(mosq, obj, rc):
 def signal_handler(signal, frame):
     print('You pressed Ctrl+C!')
     mqttc.disconnect()
+    time.sleep(5)
     sys.exit(0)
-
-
 
 
 # If you want to use a specific client id, use
