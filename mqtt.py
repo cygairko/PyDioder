@@ -58,12 +58,13 @@ def on_log(mosq, obj, level, string):
 
 
 def on_disconnect(mosq, obj, rc):
-    mosq.publish(config.MQTT_REGISTER_TOPIC, json.dumps({'function': 'unregister', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS)
+    #mosq.publish(config.MQTT_REGISTER_TOPIC, json.dumps({'function': 'unregister', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS)
     print("Disconnected successfully.")
 
 
 def signal_handler(signal, frame):
     print('You pressed Ctrl+C!')
+    mqttc.publish(config.MQTT_REGISTER_TOPIC, json.dumps({'function': 'unregister', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS)
     mqttc.disconnect()
     time.sleep(2)
     sys.exit(0)
