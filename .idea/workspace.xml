@@ -29,7 +29,7 @@
       <file leaf-file-name="mqtt.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mqtt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="15" selection-start="1962" selection-end="1962" vertical-scroll-proportion="0.4213615" vertical-offset="797" max-vertical-offset="1666">
+            <state line="67" column="17" selection-start="1946" selection-end="1946" vertical-scroll-proportion="0.40140846" vertical-offset="797" max-vertical-offset="1666">
               <folding>
                 <element signature="e#72#83#0" expanded="true" />
               </folding>
@@ -63,8 +63,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="220" />
-    <option name="y" value="7" />
+    <option name="x" value="278" />
+    <option name="y" value="1" />
     <option name="width" value="1571" />
     <option name="height" value="1000" />
   </component>
@@ -331,11 +331,15 @@
       <created>1398814368265</created>
       <updated>1398814368265</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="changes">
+      <created>1398814620773</created>
+      <updated>1398814620773</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="220" y="7" width="1571" height="1000" extended-state="0" />
+    <frame x="278" y="1" width="1571" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -544,7 +548,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="15" selection-start="1962" selection-end="1962" vertical-scroll-proportion="0.4213615" vertical-offset="797" max-vertical-offset="1666">
+        <state line="67" column="17" selection-start="1946" selection-end="1946" vertical-scroll-proportion="0.40140846" vertical-offset="797" max-vertical-offset="1666">
           <folding>
             <element signature="e#72#83#0" expanded="true" />
           </folding>

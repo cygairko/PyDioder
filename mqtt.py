@@ -65,7 +65,7 @@ def on_disconnect(mosq, obj, rc):
 def signal_handler(signal, frame):
     print('You pressed Ctrl+C!')
     mqttc.disconnect()
-    time.sleep(5)
+    time.sleep(2)
     sys.exit(0)
 
 
