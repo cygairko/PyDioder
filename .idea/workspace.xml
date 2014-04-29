@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213cfd40-6243-4d69-827d-89cb9bb52fd6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mqtt.py" afterPath="$PROJECT_DIR$/mqtt.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PiDioder.iws" />
@@ -26,22 +26,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="mqtt.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="mqtt.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mqtt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0" vertical-offset="117" max-vertical-offset="1275">
+            <state line="55" column="39" selection-start="1795" selection-end="1795" vertical-scroll-proportion="0.6185446" vertical-offset="408" max-vertical-offset="1377">
               <folding>
                 <element signature="e#72#83#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="49" selection-start="207" selection-end="207" vertical-scroll-proportion="0.21948357" vertical-offset="0" max-vertical-offset="852">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -66,8 +57,8 @@
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/pub.py" />
         <option value="$PROJECT_DIR$/light.py" />
-        <option value="$PROJECT_DIR$/mqtt.py" />
         <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/mqtt.py" />
       </list>
     </option>
   </component>
@@ -312,7 +303,11 @@
       <created>1398734045475</created>
       <updated>1398734045475</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="changes">
+      <created>1398734867147</created>
+      <updated>1398734867148</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -513,19 +508,19 @@
         <state line="62" column="25" selection-start="1866" selection-end="1866" vertical-scroll-proportion="1.2370892" vertical-offset="0" max-vertical-offset="1275" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mqtt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0" vertical-offset="117" max-vertical-offset="1275">
-          <folding>
-            <element signature="e#72#83#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="49" selection-start="207" selection-end="207" vertical-scroll-proportion="0.21948357" vertical-offset="0" max-vertical-offset="852">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mqtt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="39" selection-start="1795" selection-end="1795" vertical-scroll-proportion="0.6185446" vertical-offset="408" max-vertical-offset="1377">
+          <folding>
+            <element signature="e#72#83#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

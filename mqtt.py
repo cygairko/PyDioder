@@ -51,6 +51,11 @@ def on_subscribe(mosq, obj, mid, granted_qos):
 def on_log(mosq, obj, level, string):
     print(string)
 
+def on_disconnect(mosq, obj, rc):
+    mosq.publish(config.MQTT_REGISTER_TOPIC, json.dumps({'function': 'unregister', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS)
+    print("Disconnected successfully.")
+
+
 # If you want to use a specific client id, use
 # mqttc = mosquitto.Mosquitto("client-id")
 # but note that the client id must be unique on the broker. Leaving the client
@@ -61,6 +66,7 @@ mqttc.on_message = on_message
 mqttc.on_connect = on_connect
 mqttc.on_publish = on_publish
 mqttc.on_subscribe = on_subscribe
+mqttc.on_disconnect = on_disconnect
 
 mqttc.connect(config.MQTT_HOST, config.MQTT_PORT, 60)
 
