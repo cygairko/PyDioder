@@ -37,7 +37,7 @@ class Led:
         self._red_pwm.stop()
         self._green_pwm.stop()
         self._blue_pwm.stop()
-        GPIO.cleanup()
+        #GPIO.cleanup()
 
     # method to start the pwm
     def start(self):

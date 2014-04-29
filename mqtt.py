@@ -81,11 +81,8 @@ mqttc.on_publish = on_publish
 mqttc.on_subscribe = on_subscribe
 mqttc.on_disconnect = on_disconnect
 
-#mqttc.connect(config.MQTT_HOST, config.MQTT_PORT, 60)
+#mqttc.connect(config.MQTT_HOST, config.MQTT_PORT)
 mqttc.connect_async(config.MQTT_HOST, config.MQTT_PORT)
-
-#mqttc.subscribe(config.MQTT_ACT_TOPIC, 1)
-#mqttc.publish("home/light/raspi0/response", "color123")
 
 #mqttc.loop_forever()
 mqttc.loop_start()
