@@ -29,7 +29,7 @@
       <file leaf-file-name="mqtt.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mqtt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="0" selection-start="2120" selection-end="2120" vertical-scroll-proportion="0.44131455" vertical-offset="814" max-vertical-offset="1683">
+            <state line="91" column="1" selection-start="2739" selection-end="2739" vertical-scroll-proportion="0.8603286" vertical-offset="814" max-vertical-offset="1666">
               <folding>
                 <element signature="e#72#83#0" expanded="true" />
               </folding>
@@ -343,7 +343,11 @@
       <created>1398814782150</created>
       <updated>1398814782150</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="changes">
+      <created>1398814896422</created>
+      <updated>1398814896422</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -556,7 +560,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="0" selection-start="2120" selection-end="2120" vertical-scroll-proportion="0.44131455" vertical-offset="814" max-vertical-offset="1683">
+        <state line="91" column="1" selection-start="2739" selection-end="2739" vertical-scroll-proportion="0.8603286" vertical-offset="814" max-vertical-offset="1666">
           <folding>
             <element signature="e#72#83#0" expanded="true" />
           </folding>
