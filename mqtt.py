@@ -89,4 +89,4 @@ mqttc.loop_start()
 
 signal.signal(signal.SIGINT, signal_handler)
 print('Press Ctrl+C to quit')
-#signal.pause()
+signal.pause()
