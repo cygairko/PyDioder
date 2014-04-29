@@ -7,6 +7,8 @@ import json
 import config
 import paho.mqtt.client as mqtt
 import light
+import signal
+import sys
 
 led = light.Led()
 led.start()
@@ -74,3 +76,12 @@ mqttc.connect(config.MQTT_HOST, config.MQTT_PORT, 60)
 #mqttc.publish("home/light/raspi0/response", "color123")
 
 mqttc.loop_forever()
+
+def signal_handler(signal, frame):
+    print('You pressed Ctrl+C!')
+    mqttc.disconnect()
+    sys.exit(0)
+
+signal.signal(signal.SIGINT, signal_handler)
+print('Press Ctrl+C to quit')
+signal.pause()

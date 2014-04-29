@@ -29,7 +29,7 @@
       <file leaf-file-name="mqtt.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mqtt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="39" selection-start="1795" selection-end="1795" vertical-scroll-proportion="0.6185446" vertical-offset="408" max-vertical-offset="1377">
+            <state line="56" column="46" selection-start="1672" selection-end="1672" vertical-scroll-proportion="0.40140846" vertical-offset="610" max-vertical-offset="1564">
               <folding>
                 <element signature="e#72#83#0" expanded="true" />
               </folding>
@@ -307,7 +307,11 @@
       <created>1398734867147</created>
       <updated>1398734867148</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added on_disconnect callback function">
+      <created>1398738318367</created>
+      <updated>1398738318367</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -348,7 +352,8 @@
     </option>
     <MESSAGE value="pycharm init" />
     <MESSAGE value="changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes" />
+    <MESSAGE value="added on_disconnect callback function" />
+    <option name="LAST_COMMIT_MESSAGE" value="added on_disconnect callback function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -517,7 +522,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="39" selection-start="1795" selection-end="1795" vertical-scroll-proportion="0.6185446" vertical-offset="408" max-vertical-offset="1377">
+        <state line="56" column="46" selection-start="1672" selection-end="1672" vertical-scroll-proportion="0.40140846" vertical-offset="610" max-vertical-offset="1564">
           <folding>
             <element signature="e#72#83#0" expanded="true" />
           </folding>
