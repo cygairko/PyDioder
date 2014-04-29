@@ -4,11 +4,13 @@
 __author__ = 'cygairko'
 
 import json
+import signal
+import sys
+
 import config
 import paho.mqtt.client as mqtt
 import light
-import signal
-import sys
+
 
 led = light.Led()
 led.start()
@@ -53,16 +55,28 @@ def on_subscribe(mosq, obj, mid, granted_qos):
 def on_log(mosq, obj, level, string):
     print(string)
 
+
 def on_disconnect(mosq, obj, rc):
     mosq.publish(config.MQTT_REGISTER_TOPIC, json.dumps({'function': 'unregister', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS)
     print("Disconnected successfully.")
+
+
+def signal_handler(signal, frame):
+    print('You pressed Ctrl+C!')
+    mqttc.disconnect()
+    sys.exit(0)
+
+
+signal.signal(signal.SIGINT, signal_handler)
+print('Press Ctrl+C to quit')
+signal.pause()
 
 
 # If you want to use a specific client id, use
 # mqttc = mosquitto.Mosquitto("client-id")
 # but note that the client id must be unique on the broker. Leaving the client
 # id parameter empty will generate a random id for you.
-mqttc = mqtt.Client()
+mqttc = mqtt.Client(config.DEVICE_ID)
 
 mqttc.on_message = on_message
 mqttc.on_connect = on_connect
@@ -76,12 +90,3 @@ mqttc.connect(config.MQTT_HOST, config.MQTT_PORT, 60)
 #mqttc.publish("home/light/raspi0/response", "color123")
 
 mqttc.loop_forever()
-
-def signal_handler(signal, frame):
-    print('You pressed Ctrl+C!')
-    mqttc.disconnect()
-    sys.exit(0)
-
-signal.signal(signal.SIGINT, signal_handler)
-print('Press Ctrl+C to quit')
-signal.pause()
