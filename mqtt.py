@@ -30,7 +30,7 @@ def on_message(mosq, obj, msg):
     if (config.MQTT_REQUEST_TOPIC == msg.topic):
         messageString = msg.payload.decode("utf-8")
         decoded = json.loads(messageString)
-        if (decoded['function'] == "setColor"):
+        if (decoded['function'] == "setcolor"):
             red = int(decoded['color'][0])
             green = int(decoded['color'][1])
             blue = int(decoded['color'][2])
@@ -40,9 +40,9 @@ def on_message(mosq, obj, msg):
             # send ACK
             mosq.publish(config.MQTT_RESPONSE_TOPIC, messageString, config.MQTT_QOS)
 
-        if (decoded['function'] == "getColor"):
+        if (decoded['function'] == "getcolor"):
             colors = led.getColor()
-            mosq.publish(config.MQTT_RESPONSE_TOPIC, json.dumps({'response': 'getColor', 'color': [colors[0], colors[1], colors[2]]}), config.MQTT_QOS)
+            mosq.publish(config.MQTT_RESPONSE_TOPIC, json.dumps({'response': 'getcolor', 'color': [colors[0], colors[1], colors[2]]}), config.MQTT_QOS)
 
 
 def on_publish(mosq, obj, mid):
