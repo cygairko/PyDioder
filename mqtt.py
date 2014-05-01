@@ -16,10 +16,12 @@ import light
 led = light.Led()
 led.start()
 
+retained = True
+
 
 def on_connect(mosq, obj, rc):
     #mosq.subscribe("$SYS/#", 0)
-    mosq.publish(config.MQTT_REGISTER_TOPIC, json.dumps({'function': 'register', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS)
+    mosq.publish(config.MQTT_REGISTER_TOPIC, json.dumps({'function': 'register', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
     mosq.subscribe(config.MQTT_REQUEST_TOPIC, config.MQTT_QOS)
 
     print("rc: " + str(rc))
