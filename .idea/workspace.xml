@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213cfd40-6243-4d69-827d-89cb9bb52fd6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mqtt.py" afterPath="$PROJECT_DIR$/mqtt.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -30,7 +29,7 @@
       <file leaf-file-name="mqtt.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mqtt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="31" selection-start="1447" selection-end="1447" vertical-scroll-proportion="0.40524435" vertical-offset="510" max-vertical-offset="1717">
+            <state line="45" column="38" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.30393326" vertical-offset="510" max-vertical-offset="1717">
               <folding>
                 <element signature="e#72#83#0" expanded="true" />
               </folding>
@@ -372,7 +371,11 @@
       <created>1398992143546</created>
       <updated>1398992143546</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="changes">
+      <created>1398995488070</created>
+      <updated>1398995488070</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -592,7 +595,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="31" selection-start="1447" selection-end="1447" vertical-scroll-proportion="0.40524435" vertical-offset="510" max-vertical-offset="1717">
+        <state line="45" column="38" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.30393326" vertical-offset="510" max-vertical-offset="1717">
           <folding>
             <element signature="e#72#83#0" expanded="true" />
           </folding>

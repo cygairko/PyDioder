@@ -22,7 +22,7 @@ retained = True
 def on_connect(mosq, obj, rc):
     #mosq.subscribe("$SYS/#", 0)
     # register at server
-    mosq.publish(config.MQTT_SERVER_TOPIC + "/register", json.dumps({'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+    mosq.publish(config.MQTT_SERVER_TOPIC + "/registration", json.dumps({'function': 'register', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
     mosq.subscribe(config.MQTT_REQUESTS_TOPIC, config.MQTT_QOS)
 
     print("rc: " + str(rc))
@@ -66,7 +66,7 @@ def on_disconnect(mosq, obj, rc):
 
 
 def signal_handler(signal, frame):
-    mqttc.publish(config.MQTT_SERVER_TOPIC + "/unregister", json.dumps({'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+    mqttc.publish(config.MQTT_SERVER_TOPIC + "/registration", json.dumps({'function': 'unregister', 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
     mqttc.disconnect()
     time.sleep(2)
     sys.exit(0)
