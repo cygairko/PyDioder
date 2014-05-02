@@ -7,6 +7,7 @@ import json
 import signal
 import sys
 import time
+import re
 
 import config
 import paho.mqtt.client as mqtt
@@ -17,6 +18,8 @@ led = light.Led()
 led.start()
 
 retained = True
+
+_pattern = re.compile(config.MQTT_TOPIC_BASE + '/([a-z0-9]+)/([a-z0-9]+)/([a-z0-9]+)')
 
 
 def on_connect(mosq, obj, rc):
@@ -30,6 +33,13 @@ def on_connect(mosq, obj, rc):
 
 def on_message(mosq, obj, msg):
     print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
+
+    matcher = _pattern.match(msg.topic)
+    print(matcher.group(0))
+    print(matcher.group(1))
+    print(matcher.group(2))
+    print(matcher.group(3))
+
     if (config.MQTT_REQUESTS_TOPIC == msg.topic):
         messageString = msg.payload.decode("utf-8")
         decoded = json.loads(messageString)

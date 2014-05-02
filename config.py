@@ -9,5 +9,6 @@ SCOPE = "light"
 SERVER_ID = "server0"
 
 #Topics
-MQTT_SERVER_TOPIC = "home/" + DEVICE_ID + "/" + SERVER_ID
-MQTT_REQUESTS_TOPIC = "home/+/" + DEVICE_ID + "/#"
+MQTT_TOPIC_BASE = "home"
+MQTT_SERVER_TOPIC = MQTT_TOPIC_BASE + "/" + DEVICE_ID + "/" + SERVER_ID
+MQTT_REQUESTS_TOPIC = MQTT_TOPIC_BASE + "/+/" + DEVICE_ID + "/#"
