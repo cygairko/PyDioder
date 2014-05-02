@@ -19,14 +19,14 @@ led.start()
 
 retained = True
 
-_pattern = re.compile(config.MQTT_TOPIC_BASE + '/([a-z0-9]+)/([a-z0-9]+)/([a-z0-9]+)')
+pattern = re.compile(config.MQTT_TOPIC_BASE + '/([a-z0-9]+)/([a-z0-9]+)/([a-z0-9]+)')
 
 
 def on_connect(mosq, obj, rc):
     #mosq.subscribe("$SYS/#", 0)
     # register at server
-    mosq.publish(config.MQTT_SERVER_TOPIC + "/registration", json.dumps({'function': 'register', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
-    mosq.subscribe(config.MQTT_REQUESTS_TOPIC, config.MQTT_QOS)
+    mosq.publish(config.MQTT_TOPIC_SERVER + '/registration', json.dumps({'function': 'register', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+    mosq.subscribe(config.MQTT_TOPIC_REQUESTS, config.MQTT_QOS)
 
     print("rc: " + str(rc))
 
@@ -34,28 +34,27 @@ def on_connect(mosq, obj, rc):
 def on_message(mosq, obj, msg):
     print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
 
-    matcher = _pattern.match(msg.topic)
-    print(matcher.group(0))
-    print(matcher.group(1))
-    print(matcher.group(2))
-    print(matcher.group(3))
+    matcher = pattern.match(msg.topic)
 
-    if (config.MQTT_REQUESTS_TOPIC == msg.topic):
-        messageString = msg.payload.decode("utf-8")
-        decoded = json.loads(messageString)
-        if (decoded['function'] == "setcolor"):
-            red = int(decoded['color'][0])
-            green = int(decoded['color'][1])
-            blue = int(decoded['color'][2])
-            led.setColor(red, green, blue)
+    source = matcher.group(1)
+    target = matcher.group(2)
+    issue = matcher.group(3)
 
-            print(messageString)
-            # send ACK
-            mosq.publish(config.MQTT_RESPONSE_TOPIC, messageString, config.MQTT_QOS)
+    decoded = json.loads(msg.payload.decode('utf-8'))
+    function = decoded['function']
 
-        if (decoded['function'] == "getcolor"):
-            colors = led.getColor()
-            mosq.publish(config.MQTT_RESPONSE_TOPIC, json.dumps({'response': 'getcolor', 'color': [colors[0], colors[1], colors[2]]}), config.MQTT_QOS)
+    if (target == config.DEVICE_ID):
+
+
+        if (issue == 'status'):
+            if (function == 'setcolor'):
+                color = [int(decoded['color'][0]), int(decoded['color'][1]), int(decoded['color'][2])]
+                led.setColor(color[0], color[1], color[2])
+                mosq.publish(config.MQTT_TOPIC_STATUSUPDATE, json.dumps({'deviceid': config.DEVICE_ID, 'color': color}), config.MQTT_QOS, retained)
+
+            if (function == 'getcolor'):
+                color = led.getColor()
+                mosq.publish(config.MQTT_TOPIC_STATUSUPDATE, json.dumps({'deviceid': config.DEVICE_ID, 'color': color}), config.MQTT_QOS, retained)
 
 
 def on_publish(mosq, obj, mid):
@@ -76,7 +75,7 @@ def on_disconnect(mosq, obj, rc):
 
 
 def signal_handler(signal, frame):
-    mqttc.publish(config.MQTT_SERVER_TOPIC + "/registration", json.dumps({'function': 'unregister', 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+    mqttc.publish(config.MQTT_TOPIC_SERVER + "/registration", json.dumps({'function': 'unregister', 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
     mqttc.disconnect()
     time.sleep(2)
     sys.exit(0)
