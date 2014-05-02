@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213cfd40-6243-4d69-827d-89cb9bb52fd6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PiDioder.iws" />
@@ -25,10 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="mqtt.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="mqtt.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mqtt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="31" selection-start="167" selection-end="167" vertical-scroll-proportion="0.10131109" vertical-offset="102" max-vertical-offset="1700">
+            <state line="36" column="44" selection-start="932" selection-end="932" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1700">
+              <folding>
+                <element signature="e#72#83#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="67" selection-start="225" selection-end="225" vertical-scroll-proportion="0.21948357" vertical-offset="0" max-vertical-offset="852">
               <folding />
             </state>
           </provider>
@@ -53,9 +65,9 @@
         <option value="$PROJECT_DIR$/properties.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/pub.py" />
-        <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/light.py" />
         <option value="$PROJECT_DIR$/mqtt.py" />
+        <option value="$PROJECT_DIR$/config.py" />
       </list>
     </option>
   </component>
@@ -360,7 +372,11 @@
       <created>1398985938945</created>
       <updated>1398985938945</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="changes">
+      <created>1398985942156</created>
+      <updated>1398985942156</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -413,21 +429,27 @@
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="47" selection-start="817" selection-end="817" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="1547">
-          <folding />
+          <folding>
+            <element signature="e#72#83#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="31" selection-start="986" selection-end="986" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="1275">
-          <folding />
+          <folding>
+            <element signature="e#72#83#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="132" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1241">
-          <folding />
+          <folding>
+            <element signature="e#72#83#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -441,7 +463,9 @@
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="132" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1241">
-          <folding />
+          <folding>
+            <element signature="e#72#83#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -455,7 +479,9 @@
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="24" selection-start="809" selection-end="816" vertical-scroll-proportion="0.0" vertical-offset="159" max-vertical-offset="1139">
-          <folding />
+          <folding>
+            <element signature="e#72#83#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -467,7 +493,9 @@
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="44" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="969">
-          <folding />
+          <folding>
+            <element signature="e#72#83#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -486,7 +514,9 @@
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="44" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
-          <folding />
+          <folding>
+            <element signature="e#72#83#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -505,7 +535,9 @@
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="44" selection-start="382" selection-end="382" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
-          <folding />
+          <folding>
+            <element signature="e#72#83#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -529,7 +561,9 @@
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="29" selection-start="575" selection-end="575" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="952">
-          <folding />
+          <folding>
+            <element signature="e#72#83#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -553,16 +587,18 @@
         <state line="39" column="23" selection-start="1186" selection-end="1186" vertical-scroll-proportion="0.6584507" vertical-offset="102" max-vertical-offset="1275" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
+    <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="49" selection-start="207" selection-end="207" vertical-scroll-proportion="0.21948357" vertical-offset="0" max-vertical-offset="852">
-          <folding />
+        <state line="36" column="44" selection-start="932" selection-end="932" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1700">
+          <folding>
+            <element signature="e#72#83#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mqtt.py">
+    <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="31" selection-start="167" selection-end="167" vertical-scroll-proportion="0.10131109" vertical-offset="102" max-vertical-offset="1700">
+        <state line="11" column="67" selection-start="225" selection-end="225" vertical-scroll-proportion="0.21948357" vertical-offset="0" max-vertical-offset="852">
           <folding />
         </state>
       </provider>
