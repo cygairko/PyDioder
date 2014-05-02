@@ -51,10 +51,13 @@ def on_message(mosq, obj, msg):
                 color = [int(decoded['color'][0]), int(decoded['color'][1]), int(decoded['color'][2])]
                 led.setColor(color[0], color[1], color[2])
                 mosq.publish(config.MQTT_TOPIC_STATUSUPDATE, json.dumps({'deviceid': config.DEVICE_ID, 'color': color}), config.MQTT_QOS, retained)
-
-            if (function == 'getcolor'):
+            elif (function == 'getcolor'):
                 color = led.getColor()
                 mosq.publish(config.MQTT_TOPIC_STATUSUPDATE, json.dumps({'deviceid': config.DEVICE_ID, 'color': color}), config.MQTT_QOS, retained)
+            else:
+                print('no valid function')
+        else:
+            print('no valid issue')
 
 
 def on_publish(mosq, obj, mid):
