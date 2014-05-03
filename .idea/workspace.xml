@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213cfd40-6243-4d69-827d-89cb9bb52fd6" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\Misc\workspace\pyCharm\PyDioder\pidioder.py" afterPath="" />
-      <change type="DELETED" beforePath="D:\Misc\workspace\pyCharm\PyDioder\pub.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mqtt.py" afterPath="$PROJECT_DIR$/mqtt.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PiDioder.iws" />
@@ -27,31 +26,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="mqtt.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="mqtt.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mqtt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="35" selection-start="1774" selection-end="1774" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1921">
+            <state line="74" column="33" selection-start="2043" selection-end="2043" vertical-scroll-proportion="0.25832376" vertical-offset="1033" max-vertical-offset="1904">
               <folding>
                 <element signature="e#72#83#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="light.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/light.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="54" selection-start="733" selection-end="733" vertical-scroll-proportion="0.46153846" vertical-offset="0" max-vertical-offset="1275">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="60" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -522,7 +503,11 @@
       <created>1399046902597</created>
       <updated>1399046902597</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="clean up: deleted old files">
+      <created>1399047169093</created>
+      <updated>1399047169093</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -565,7 +550,8 @@
     <MESSAGE value="added on_disconnect callback function" />
     <MESSAGE value="added regex" />
     <MESSAGE value="changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes" />
+    <MESSAGE value="clean up: deleted old files" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean up: deleted old files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -701,19 +687,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mqtt.py">
+    <entry file="file://$PROJECT_DIR$/light.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="35" selection-start="1774" selection-end="1774" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1921">
-          <folding>
-            <element signature="e#72#83#0" expanded="true" />
-          </folding>
+        <state line="24" column="52" selection-start="731" selection-end="731" vertical-scroll-proportion="0.01923077" vertical-offset="391" max-vertical-offset="1275">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/light.py">
+    <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="54" selection-start="733" selection-end="733" vertical-scroll-proportion="0.46153846" vertical-offset="0" max-vertical-offset="1275">
-          <folding />
+        <state line="74" column="33" selection-start="2043" selection-end="2043" vertical-scroll-proportion="0.25832376" vertical-offset="1033" max-vertical-offset="1904">
+          <folding>
+            <element signature="e#72#83#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

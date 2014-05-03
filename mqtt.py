@@ -73,7 +73,6 @@ def on_log(mosq, obj, level, string):
 
 
 def on_disconnect(mosq, obj, rc):
-    #mosq.publish(config.MQTT_REGISTER_TOPIC, json.dumps({'function': 'unregister', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS)
     print("successfully disconnected")
 
 
