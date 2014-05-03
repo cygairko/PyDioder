@@ -31,8 +31,7 @@ def on_connect(mosq, obj, rc):
     mosq.publish(config.MQTT_TOPIC_SERVER + '/registration', json.dumps({'function': 'register', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, notretained)
 
     # "login" at server > set available true
-    mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'setavailable': 'true', 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
-
+    mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'setavailable': True, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
 
     mosq.subscribe(config.MQTT_TOPIC_REQUESTS, config.MQTT_QOS)
 
@@ -86,7 +85,7 @@ def on_disconnect(mosq, obj, rc):
 
 def signal_handler(signal, frame):
     # "logoff" before disconnect
-    mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'setavailable': 'false', 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+    mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'setavailable': False, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
 
     # unregister; not neccessary
     # mqttc.publish(config.MQTT_TOPIC_SERVER + "/registration", json.dumps({'function': 'unregister', 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, notretained)
