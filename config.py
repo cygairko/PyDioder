@@ -5,7 +5,7 @@ MQTT_HOST = 'archpi'
 MQTT_PORT = 1883
 MQTT_QOS = 2
 DEVICE_ID = 'raspi0'
-SCOPE = 'light'
+SCOPE = 'colorlight'
 SERVER_ID = 'server0'
 
 #Topics
