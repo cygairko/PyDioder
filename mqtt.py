@@ -31,7 +31,10 @@ def on_connect(mosq, obj, rc):
     mosq.publish(config.MQTT_TOPIC_SERVER + '/registration', json.dumps({'function': 'register', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
 
     # "login" at server > set available true
-    mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'setavailable': True, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+    mosq.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'setavailable': True, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+
+    # initial status update to have correct retained message
+    send_statusupdate(mosq)
 
     mosq.subscribe(config.MQTT_TOPIC_REQUESTS, config.MQTT_QOS)
 
@@ -57,10 +60,9 @@ def on_message(mosq, obj, msg):
             if (function == 'setcolor'):
                 color = [int(decoded['color'][0]), int(decoded['color'][1]), int(decoded['color'][2])]
                 led.setColor(color[0], color[1], color[2])
-                mosq.publish(config.MQTT_TOPIC_STATUSUPDATE, json.dumps({'deviceid': config.DEVICE_ID, 'color': color}), config.MQTT_QOS, retained)
+                send_statusupdate(mosq)
             elif (function == 'getcolor'):
-                color = led.getColor()
-                mosq.publish(config.MQTT_TOPIC_STATUSUPDATE, json.dumps({'deviceid': config.DEVICE_ID, 'color': color}), config.MQTT_QOS, retained)
+                send_statusupdate(mosq)
             else:
                 print('no valid function')
         else:
@@ -93,6 +95,10 @@ def signal_handler(signal, frame):
     mqttc.disconnect()
     time.sleep(2)
     sys.exit(0)
+
+def send_statusupdate(mosq):
+    color = led.getColor()
+    mosq.publish(config.MQTT_TOPIC_STATUSUPDATE, json.dumps({'deviceid': config.DEVICE_ID, 'color': color}), config.MQTT_QOS, retained)
 
 
 # If you want to use a specific client id, use

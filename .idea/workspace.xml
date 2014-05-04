@@ -29,7 +29,7 @@
       <file leaf-file-name="mqtt.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mqtt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="169" selection-start="660" selection-end="660" vertical-scroll-proportion="0.34361702" vertical-offset="187" max-vertical-offset="2108">
+            <state line="64" column="39" selection-start="1772" selection-end="1772" vertical-scroll-proportion="0.36702126" vertical-offset="743" max-vertical-offset="2210">
               <folding>
                 <element signature="e#72#83#0" expanded="true" />
               </folding>
@@ -416,7 +416,11 @@
       <created>1399161422012</created>
       <updated>1399161422012</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="update">
+      <created>1399161556554</created>
+      <updated>1399161556554</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -461,7 +465,8 @@
     <MESSAGE value="changes" />
     <MESSAGE value="clean up: deleted old files" />
     <MESSAGE value="availablility" />
-    <option name="LAST_COMMIT_MESSAGE" value="availablility" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -601,7 +606,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/light.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="52" selection-start="731" selection-end="731" vertical-scroll-proportion="0.01923077" vertical-offset="391" max-vertical-offset="1275" />
+        <state line="24" column="52" selection-start="731" selection-end="731" vertical-scroll-proportion="0.01923077" vertical-offset="391" max-vertical-offset="1275">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
@@ -613,7 +620,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="169" selection-start="660" selection-end="660" vertical-scroll-proportion="0.34361702" vertical-offset="187" max-vertical-offset="2108">
+        <state line="64" column="39" selection-start="1772" selection-end="1772" vertical-scroll-proportion="0.36702126" vertical-offset="743" max-vertical-offset="2210">
           <folding>
             <element signature="e#72#83#0" expanded="true" />
           </folding>
