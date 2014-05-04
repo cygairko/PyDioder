@@ -69,13 +69,12 @@ def on_message(mosq, obj, msg):
     function = decoded['function']
 
     if (target == config.DEVICE_ID):
-
-
         if (issue == 'status'):
             if (function == 'setcolor'):
                 color = [int(decoded['color'][0]), int(decoded['color'][1]), int(decoded['color'][2])]
                 led.setColor(color[0], color[1], color[2])
                 send_statusupdate(mosq)
+                print(source + ' set ' + led.getColor())
             elif (function == 'getcolor'):
                 send_statusupdate(mosq)
             else:
