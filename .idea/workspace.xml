@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="213cfd40-6243-4d69-827d-89cb9bb52fd6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
+    <list default="true" id="213cfd40-6243-4d69-827d-89cb9bb52fd6" name="Default" comment="changes">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mqtt.py" afterPath="$PROJECT_DIR$/mqtt.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -30,7 +29,7 @@
       <file leaf-file-name="mqtt.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mqtt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="33" selection-start="945" selection-end="945" vertical-scroll-proportion="0.506383" vertical-offset="204" max-vertical-offset="2567">
+            <state line="41" column="28" selection-start="974" selection-end="974" vertical-scroll-proportion="0.4212766" vertical-offset="301" max-vertical-offset="2567">
               <folding>
                 <element signature="e#72#83#0" expanded="true" />
               </folding>
@@ -429,7 +428,11 @@
       <created>1399215804791</created>
       <updated>1399215804791</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="changes">
+      <created>1399217944533</created>
+      <updated>1399217944533</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -477,6 +480,7 @@
     <MESSAGE value="bed send_statusupdate into a separate function&#10;" />
     <MESSAGE value="changes" />
     <option name="LAST_COMMIT_MESSAGE" value="changes" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -630,7 +634,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="33" selection-start="945" selection-end="945" vertical-scroll-proportion="0.506383" vertical-offset="204" max-vertical-offset="2567">
+        <state line="41" column="28" selection-start="974" selection-end="974" vertical-scroll-proportion="0.4212766" vertical-offset="301" max-vertical-offset="2567">
           <folding>
             <element signature="e#72#83#0" expanded="true" />
           </folding>
