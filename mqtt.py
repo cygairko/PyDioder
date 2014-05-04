@@ -10,9 +10,23 @@ import time
 import re
 
 import config
-import paho.mqtt.client as mqtt
 import light
 
+
+try:
+    import paho.mqtt.client as mqtt
+except ImportError:
+    # This part is only required to run the example from within the examples
+    # directory when the module itself is not installed.
+    #
+    # If you have the module installed, just use "import paho.mqtt.client"
+    import os
+    import inspect
+
+    cmd_subfolder = os.path.realpath(os.path.abspath(os.path.join(os.path.split(inspect.getfile(inspect.currentframe()))[0], "../src")))
+    if cmd_subfolder not in sys.path:
+        sys.path.insert(0, cmd_subfolder)
+    import paho.mqtt.client as mqtt
 
 led = light.Led()
 led.start()
@@ -24,20 +38,6 @@ pattern = re.compile(config.MQTT_TOPIC_BASE + '/([a-z0-9]+)/([a-z0-9]+)/([a-z0-9
 
 
 def on_connect(mosq, obj, rc):
-    #mosq.subscribe("$SYS/#", 0)
-
-    # register at server
-    # registration will be ignored, if already done
-    mosq.publish(config.MQTT_TOPIC_SERVER + '/registration', json.dumps({'function': 'register', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
-
-    # "login" at server > set available true
-    mosq.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'setavailable': True, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
-
-    # initial status update to have correct retained message
-    send_statusupdate(mosq)
-
-    mosq.subscribe(config.MQTT_TOPIC_REQUESTS, config.MQTT_QOS)
-
     print("rc: " + str(rc))
 
 
@@ -96,6 +96,7 @@ def signal_handler(signal, frame):
     time.sleep(2)
     sys.exit(0)
 
+
 def send_statusupdate(mosq):
     color = led.getColor()
     mosq.publish(config.MQTT_TOPIC_STATUSUPDATE, json.dumps({'deviceid': config.DEVICE_ID, 'color': color}), config.MQTT_QOS, retained)
@@ -115,6 +116,23 @@ mqttc.on_disconnect = on_disconnect
 
 #mqttc.connect(config.MQTT_HOST, config.MQTT_PORT)
 mqttc.connect_async(config.MQTT_HOST, config.MQTT_PORT)
+
+# Uncomment to enable debug messages
+#mqttc.on_log = on_log
+
+#mosq.subscribe("$SYS/#", 0)
+
+# register at server
+# registration will be ignored, if already done
+mqttc.publish(config.MQTT_TOPIC_SERVER + '/registration', json.dumps({'function': 'register', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+
+# "login" at server > set available true
+mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'setavailable': True, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+
+# initial status update to have correct retained message in statusupdate topic
+send_statusupdate(mqttc)
+# subscribe to topic for incoming requests
+mqttc.subscribe(config.MQTT_TOPIC_REQUESTS, config.MQTT_QOS)
 
 #mqttc.loop_forever()
 mqttc.loop_start()
