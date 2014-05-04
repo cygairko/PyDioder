@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213cfd40-6243-4d69-827d-89cb9bb52fd6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mqtt.py" afterPath="$PROJECT_DIR$/mqtt.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -29,7 +30,7 @@
       <file leaf-file-name="mqtt.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mqtt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="29" selection-start="3049" selection-end="3049" vertical-scroll-proportion="0.34893617" vertical-offset="1542" max-vertical-offset="2516">
+            <state line="40" column="33" selection-start="945" selection-end="945" vertical-scroll-proportion="0.506383" vertical-offset="204" max-vertical-offset="2567">
               <folding>
                 <element signature="e#72#83#0" expanded="true" />
               </folding>
@@ -40,7 +41,7 @@
       <file leaf-file-name="config.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="64" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+            <state line="15" column="58" selection-start="440" selection-end="440" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
               <folding />
             </state>
           </provider>
@@ -424,7 +425,11 @@
       <created>1399162240951</created>
       <updated>1399162240951</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="changes">
+      <created>1399215804791</created>
+      <updated>1399215804791</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -466,12 +471,12 @@
     <MESSAGE value="pycharm init" />
     <MESSAGE value="added on_disconnect callback function" />
     <MESSAGE value="added regex" />
-    <MESSAGE value="changes" />
     <MESSAGE value="clean up: deleted old files" />
     <MESSAGE value="availablility" />
     <MESSAGE value="update" />
     <MESSAGE value="bed send_statusupdate into a separate function&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="bed send_statusupdate into a separate function&#10;" />
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -618,14 +623,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="64" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+        <state line="15" column="58" selection-start="440" selection-end="440" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="29" selection-start="3049" selection-end="3049" vertical-scroll-proportion="0.34893617" vertical-offset="1542" max-vertical-offset="2516">
+        <state line="40" column="33" selection-start="945" selection-end="945" vertical-scroll-proportion="0.506383" vertical-offset="204" max-vertical-offset="2567">
           <folding>
             <element signature="e#72#83#0" expanded="true" />
           </folding>

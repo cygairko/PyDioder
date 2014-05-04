@@ -38,6 +38,21 @@ pattern = re.compile(config.MQTT_TOPIC_BASE + '/([a-z0-9]+)/([a-z0-9]+)/([a-z0-9
 
 
 def on_connect(mosq, obj, rc):
+    # set last will and testament
+    mosq.will_set(config.MQTT_TOPIC_TESTAMENT, json.dumps({'setavailable': False, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+
+    # register at server
+    # registration will be ignored, if already done
+    mqttc.publish(config.MQTT_TOPIC_SERVER + '/registration', json.dumps({'function': 'register', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+
+    # "login" at server > set available true
+    mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'setavailable': True, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+
+    # initial status update to have correct retained message in statusupdate topic
+    send_statusupdate(mqttc)
+    # subscribe to topic for incoming requests
+    mqttc.subscribe(config.MQTT_TOPIC_REQUESTS, config.MQTT_QOS)
+
     print("rc: " + str(rc))
 
 
@@ -121,18 +136,6 @@ mqttc.connect_async(config.MQTT_HOST, config.MQTT_PORT)
 #mqttc.on_log = on_log
 
 #mosq.subscribe("$SYS/#", 0)
-
-# register at server
-# registration will be ignored, if already done
-mqttc.publish(config.MQTT_TOPIC_SERVER + '/registration', json.dumps({'function': 'register', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
-
-# "login" at server > set available true
-mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'setavailable': True, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
-
-# initial status update to have correct retained message in statusupdate topic
-send_statusupdate(mqttc)
-# subscribe to topic for incoming requests
-mqttc.subscribe(config.MQTT_TOPIC_REQUESTS, config.MQTT_QOS)
 
 #mqttc.loop_forever()
 mqttc.loop_start()
