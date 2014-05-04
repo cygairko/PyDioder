@@ -39,7 +39,7 @@ pattern = re.compile(config.MQTT_TOPIC_BASE + '/([a-z0-9]+)/([a-z0-9]+)/([a-z0-9
 
 def on_connect(mosq, obj, rc):
     # set last will and testament
-    mosq.will_set(config.MQTT_TOPIC_TESTAMENT, json.dumps({'setavailable': False, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+    mosq.will_set(config.MQTT_TOPIC_TESTAMENT, json.dumps({'setavailable': False, 'deviceid': config.DEVICE_ID, 'last': 'will'}), config.MQTT_QOS, retained)
 
     # register at server
     # registration will be ignored, if already done
