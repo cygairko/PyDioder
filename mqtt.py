@@ -46,7 +46,7 @@ def on_connect(mosq, obj, rc):
     mqttc.publish(config.MQTT_TOPIC_SERVER + '/registration', json.dumps({'function': 'register', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
 
     # "login" at server > set available true
-    mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'setavailable': True, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+    mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'available': True, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
 
     # initial status update to have correct retained message in statusupdate topic
     send_statusupdate(mqttc)
@@ -102,9 +102,10 @@ def on_disconnect(mosq, obj, rc):
 
 def signal_handler(signal, frame):
     # "logoff" before disconnect
-    mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'setavailable': False, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+    mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'available': False, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
 
     # unregister; not neccessary
+    # just using available true/false
     # mqttc.publish(config.MQTT_TOPIC_SERVER + "/registration", json.dumps({'function': 'unregister', 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, notretained)
 
     mqttc.disconnect()
@@ -114,7 +115,7 @@ def signal_handler(signal, frame):
 
 def send_statusupdate(mosq):
     color = led.getColor()
-    mosq.publish(config.MQTT_TOPIC_STATUSUPDATE, json.dumps({'deviceid': config.DEVICE_ID, 'color': color}), config.MQTT_QOS, retained)
+    mosq.publish(config.MQTT_TOPIC_STATUSUPDATE, json.dumps({'function': 'update', 'deviceid': config.DEVICE_ID, 'color': color}), config.MQTT_QOS, retained)
 
 
 # If you want to use a specific client id, use
@@ -140,7 +141,8 @@ mqttc.connect_async(config.MQTT_HOST, config.MQTT_PORT)
 #mqttc.loop_forever()
 mqttc.loop_start()
 
-mqttc.will_set(config.MQTT_TOPIC_TESTAMENT, json.dumps({'setavailable': False, 'deviceid': config.DEVICE_ID, 'last': 'will'}), config.MQTT_QOS, retained)
+# set last will and testament to let the others know, when client disappears
+mqttc.will_set(config.MQTT_TOPIC_TESTAMENT, json.dumps({'available': False, 'deviceid': config.DEVICE_ID, 'last': 'will'}), config.MQTT_QOS, retained)
 
 signal.signal(signal.SIGINT, signal_handler)
 print('Press Ctrl+C to quit')
