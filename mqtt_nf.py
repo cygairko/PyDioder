@@ -9,7 +9,7 @@ import sys
 import time
 import re
 
-import config
+import config_nf as config
 import light_nf as light
 
 
