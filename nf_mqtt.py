@@ -9,8 +9,8 @@ import sys
 import time
 import re
 
-import config_nf as config
-import light_nf as light
+import nf_config as config
+import nf_light as light
 
 
 try:

@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213cfd40-6243-4d69-827d-89cb9bb52fd6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/light_nf.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mqtt_nf.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/light.py" afterPath="$PROJECT_DIR$/light.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="D:\Misc\workspace\pyCharm\PyDioder\config_nf.py" afterPath="$PROJECT_DIR$/nf_config.py" />
+      <change type="MOVED" beforePath="D:\Misc\workspace\pyCharm\PyDioder\light_nf.py" afterPath="$PROJECT_DIR$/nf_light.py" />
+      <change type="MOVED" beforePath="D:\Misc\workspace\pyCharm\PyDioder\mqtt_nf.py" afterPath="$PROJECT_DIR$/nf_mqtt.py" />
     </list>
     <ignored path="PiDioder.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,30 +27,7 @@
     <favorites_list name="PiDioder" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="mqtt.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mqtt.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="12" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2618">
-              <folding>
-                <element signature="e#72#83#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mqtt_nf.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mqtt_nf.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="171" selection-end="171" vertical-scroll-proportion="0.36468646" vertical-offset="0" max-vertical-offset="2618">
-              <folding>
-                <element signature="e#72#83#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -74,6 +51,9 @@
         <option value="$PROJECT_DIR$/light.py" />
         <option value="$PROJECT_DIR$/light_nf.py" />
         <option value="$PROJECT_DIR$/nonfunctional/mqtt_nf.py" />
+        <option value="$PROJECT_DIR$/config_nf.py" />
+        <option value="$PROJECT_DIR$/mqtt_nf.py" />
+        <option value="$PROJECT_DIR$/nf_mqtt.py" />
       </list>
     </option>
   </component>
@@ -149,8 +129,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Misc\workspace\pyCharm\PyDioder\nonfunctional" />
       <recent name="D:\Misc\workspace\pyCharm\PyDioder" />
+      <recent name="D:\Misc\workspace\pyCharm\PyDioder\nonfunctional" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Misc\workspace\pyCharm\PyDioder" />
@@ -170,7 +150,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="PyDioder" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mqtt_nf.py" />
+      <option name="SCRIPT_NAME" value="D:\Misc\workspace\pyCharm\PyDioder\nf_mqtt.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
@@ -502,18 +482,27 @@
       <created>1399240931659</created>
       <updated>1399240931659</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="changes">
+      <created>1400361746750</created>
+      <updated>1400361746750</updated>
+    </task>
+    <task id="LOCAL-00045" summary="changes">
+      <created>1400361979340</created>
+      <updated>1400361979340</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1088" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1716693" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1716693" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -523,7 +512,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32915717" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -651,23 +639,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="12" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2618">
+        <state line="12" column="12" selection-start="158" selection-end="158" vertical-scroll-proportion="0.22246456" vertical-offset="0" max-vertical-offset="2618">
           <folding>
             <element signature="e#72#83#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/light_nf.py">
+    <entry file="file://$PROJECT_DIR$/nf_config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="35" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.85" vertical-offset="0" max-vertical-offset="1292">
+        <state line="6" column="19" selection-start="109" selection-end="109" vertical-scroll-proportion="0.11123228" vertical-offset="0" max-vertical-offset="917">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mqtt_nf.py">
+    <entry file="file://$PROJECT_DIR$/nf_light.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="171" selection-end="171" vertical-scroll-proportion="0.36468646" vertical-offset="0" max-vertical-offset="2618">
+        <state line="47" column="35" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.87131953" vertical-offset="0" max-vertical-offset="1292">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nf_mqtt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="24" selection-start="183" selection-end="183" vertical-scroll-proportion="0.22246456" vertical-offset="0" max-vertical-offset="2618">
           <folding>
             <element signature="e#72#83#0" expanded="true" />
           </folding>
