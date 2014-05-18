@@ -8,6 +8,7 @@ import signal
 import sys
 import time
 import re
+import os
 
 import nf_config as config
 import nf_light as light
@@ -145,4 +146,4 @@ mqttc.will_set(config.MQTT_TOPIC_TESTAMENT, json.dumps({'available': False, 'dev
 
 signal.signal(signal.SIGINT, signal_handler)
 print('Press Ctrl+C to quit')
-signal.pause()
+os.system("pause")
