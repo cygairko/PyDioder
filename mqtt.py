@@ -59,11 +59,11 @@ def on_connect(mosq, obj, rc):
 def on_message(mosq, obj, msg):
     print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
 
-    matcher = pattern.match(msg.topic)
+    splittopic = msg.topic.split('/')
+    print(splittopic)
 
-    source = matcher.group(1)
-    target = matcher.group(2)
-    issue = matcher.group(3)
+    target = splittopic[1]
+    issue = splittopic[2]
 
     decoded = json.loads(msg.payload.decode('utf-8'))
     function = decoded['function']
