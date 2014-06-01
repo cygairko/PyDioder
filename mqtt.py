@@ -34,7 +34,7 @@ led.start()
 retained = True
 notretained = False
 
-pattern = re.compile(config.MQTT_TOPIC_BASE + '/([a-z0-9]+)/([a-z0-9]+)/([a-z0-9]+)')
+# pattern = re.compile(config.MQTT_TOPIC_BASE + '/([a-z0-9]+)/([a-z0-9]+)/([a-z0-9]+)')
 
 
 def on_connect(mosq, obj, rc):
