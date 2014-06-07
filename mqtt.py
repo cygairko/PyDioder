@@ -56,10 +56,10 @@ def on_connect(mosq, obj, rc):
 
     # register at server
     # registration will be ignored, if already done
-    mqttc.publish(config.MQTT_TOPIC_SERVER + '/registration', json.dumps({'function': 'register', 'scope': config.SCOPE, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+    mqttc.publish(config.MQTT_TOPIC_SERVER + '/registration', json.dumps({'function': 'register', 'scope': config.SCOPE, 'deviceid': args.deviceid}), config.MQTT_QOS, retained)
 
     # "login" at server > set available true
-    mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'available': True, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+    mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'available': True, 'deviceid': args.deviceid}), config.MQTT_QOS, retained)
 
     # initial status update to have correct retained message in statusupdate topic
     send_statusupdate(mqttc)
@@ -114,11 +114,11 @@ def on_disconnect(mosq, obj, rc):
 
 def signal_handler(signal, frame):
     # "logoff" before disconnect
-    mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'available': False, 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, retained)
+    mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'available': False, 'deviceid': args.deviceid}), config.MQTT_QOS, retained)
 
     # unregister; not neccessary
     # just using available true/false
-    # mqttc.publish(config.MQTT_TOPIC_SERVER + "/registration", json.dumps({'function': 'unregister', 'deviceid': config.DEVICE_ID}), config.MQTT_QOS, notretained)
+    # mqttc.publish(config.MQTT_TOPIC_SERVER + "/registration", json.dumps({'function': 'unregister', 'deviceid': args.deviceid}), config.MQTT_QOS, notretained)
 
     mqttc.disconnect()
     time.sleep(2)
@@ -127,14 +127,14 @@ def signal_handler(signal, frame):
 
 def send_statusupdate(mosq):
     color = led.getColor()
-    mosq.publish(config.MQTT_TOPIC_STATUSUPDATE, json.dumps({'function': 'update', 'deviceid': config.DEVICE_ID, 'color': color}), config.MQTT_QOS, retained)
+    mosq.publish(config.MQTT_TOPIC_STATUSUPDATE, json.dumps({'function': 'update', 'deviceid': args.deviceid, 'color': color}), config.MQTT_QOS, retained)
 
 
 # If you want to use a specific client id, use
 # mqttc = mosquitto.Mosquitto("client-id")
 # but note that the client id must be unique on the broker. Leaving the client
 # id parameter empty will generate a random id for you.
-mqttc = mqtt.Client(config.DEVICE_ID)
+mqttc = mqtt.Client(args.deviceid)
 
 mqttc.on_message = on_message
 mqttc.on_connect = on_connect
@@ -154,7 +154,7 @@ mqttc.connect_async(config.MQTT_HOST, config.MQTT_PORT)
 mqttc.loop_start()
 
 # set last will and testament to let the others know, when client disappears
-mqttc.will_set(config.MQTT_TOPIC_TESTAMENT, json.dumps({'available': False, 'deviceid': config.DEVICE_ID, 'last': 'will'}), config.MQTT_QOS, retained)
+mqttc.will_set(config.MQTT_TOPIC_TESTAMENT, json.dumps({'available': False, 'deviceid': args.deviceid, 'last': 'will'}), config.MQTT_QOS, retained)
 
 
 print('Press Ctrl+C to quit')
