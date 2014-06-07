@@ -7,11 +7,24 @@ import json
 import signal
 import sys
 import time
-import re
-
+import argparse
 import config
-import light
+import os
 
+parser = argparse.ArgumentParser()
+parser.add_argument('-d', '--deviceid', help='provide device Id', default=config.DEVICE_ID, nargs='?')
+parser.add_argument('-m', '--mockup', help='starts in mockup mode w/o lights necessary', action='store_true')
+args = parser.parse_args()
+
+if args.mockup:
+    print('turn mockup mode on')
+    import light_mock as light
+else:
+    import light
+
+
+if args.deviceid:
+    print('deviceid =', args.deviceid)
 
 try:
     import paho.mqtt.client as mqtt
@@ -143,6 +156,10 @@ mqttc.loop_start()
 # set last will and testament to let the others know, when client disappears
 mqttc.will_set(config.MQTT_TOPIC_TESTAMENT, json.dumps({'available': False, 'deviceid': config.DEVICE_ID, 'last': 'will'}), config.MQTT_QOS, retained)
 
-signal.signal(signal.SIGINT, signal_handler)
+
 print('Press Ctrl+C to quit')
-signal.pause()
+if sys.platform == 'linux':
+    signal.signal(signal.SIGINT, signal_handler)
+    signal.pause()
+else:
+    os.system("pause")

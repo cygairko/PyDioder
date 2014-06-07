@@ -10,10 +10,13 @@ import time
 import os
 
 import nf_config as config
-import nf_light as light
+import light_mock as light
 
 args = sys.argv
-device_id = args[1]
+if len(args) == 1:
+    device_id = config.DEVICE_ID
+elif len(args) == 2:
+    device_id = args[1]
 
 try:
     import paho.mqtt.client as mqtt
