@@ -1,6 +1,7 @@
 # class for driving self string over GPIO.PWM
 __author__ = 'cygairko'
 
+
 # noinspection PyMethodMayBeStatic
 class Led:
     PORT_RED = 17  # GPIO port for red
