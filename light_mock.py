@@ -4,12 +4,13 @@ __author__ = 'cygairko'
 # always needed with RPi.GPIO
 # import RPi.GPIO as GPIO
 
-#noinspection PyMethodMayBeStatic
+
+# noinspection PyMethodMayBeStatic
 class Led:
-    PORT_RED = 17    # GPIO port for red
-    PORT_GREEN = 18    # GPIO port for green
-    PORT_BLUE = 4    # GPIO port for blue
-    FREQ = 100   # Frequency for PWM
+    PORT_RED = 17  # GPIO port for red
+    PORT_GREEN = 18  # GPIO port for green
+    PORT_BLUE = 4  # GPIO port for blue
+    FREQ = 100  # Frequency for PWM
 
     def __init__(self):
         # GPIO.setwarnings(False)
@@ -38,7 +39,7 @@ class Led:
         # self._red_pwm.stop()
         # self._green_pwm.stop()
         # self._blue_pwm.stop()
-        #GPIO.cleanup()
+        # GPIO.cleanup()
 
     # method to start the pwm
     def start(self):

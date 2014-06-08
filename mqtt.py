@@ -1,4 +1,4 @@
-# !/usr/bin/python
+#!/usr/bin/python
 # class for mqtt connection
 __author__ = 'cygairko'
 
