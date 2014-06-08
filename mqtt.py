@@ -10,18 +10,13 @@ import argparse
 import os
 
 import config
+import colorlight
 
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-d', '--deviceid', help='provide device Id', default=config.DEVICE_ID, nargs='?')
 parser.add_argument('-m', '--mockup', help='starts in mockup mode w/o lights necessary', action='store_true')
 args = parser.parse_args()
-
-if args.mockup:
-    print('turn mockup mode on')
-    import light_mock as colorlight
-else:
-    import colorlight
 
 if args.deviceid:
     print('deviceid =', args.deviceid)
