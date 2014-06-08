@@ -1,4 +1,4 @@
-#!/usr/bin/python
+# !/usr/bin/python
 
 # class for mqtt connection
 __author__ = 'cygairko'
@@ -8,8 +8,8 @@ import signal
 import sys
 import time
 import argparse
-import config
 import os
+import config
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-d', '--deviceid', help='provide device Id', default=config.DEVICE_ID, nargs='?')
@@ -18,10 +18,9 @@ args = parser.parse_args()
 
 if args.mockup:
     print('turn mockup mode on')
-    import light_mock as light
+    import light_mock as colorlight
 else:
-    import light
-
+    import colorlight
 
 if args.deviceid:
     print('deviceid =', args.deviceid)
@@ -33,7 +32,6 @@ except ImportError:
     # directory when the module itself is not installed.
     #
     # If you have the module installed, just use "import paho.mqtt.client"
-    import os
     import inspect
 
     cmd_subfolder = os.path.realpath(os.path.abspath(os.path.join(os.path.split(inspect.getfile(inspect.currentframe()))[0], "../src")))
@@ -41,13 +39,11 @@ except ImportError:
         sys.path.insert(0, cmd_subfolder)
     import paho.mqtt.client as mqtt
 
-led = light.Led()
+led = colorlight.Led(args.mockup)
 led.start()
 
 retained = True
 notretained = False
-
-# pattern = re.compile(config.MQTT_TOPIC_BASE + '/([a-z0-9]+)/([a-z0-9]+)/([a-z0-9]+)')
 
 
 def on_connect(mosq, obj, rc):
@@ -81,14 +77,14 @@ def on_message(mosq, obj, msg):
     decoded = json.loads(msg.payload.decode('utf-8'))
     function = decoded['function']
 
-    if (target == config.DEVICE_ID):
-        if (issue == 'status'):
-            if (function == 'setcolor'):
+    if target == config.DEVICE_ID:
+        if issue == 'status':
+            if function == 'setcolor':
                 color = [int(decoded['color'][0]), int(decoded['color'][1]), int(decoded['color'][2])]
                 led.setColor(color[0], color[1], color[2])
                 send_statusupdate(mosq)
                 print('set ' + str(led.getColor()))
-            elif (function == 'getcolor'):
+            elif function == 'getcolor':
                 send_statusupdate(mosq)
             else:
                 print('no valid function')
@@ -155,7 +151,6 @@ mqttc.loop_start()
 
 # set last will and testament to let the others know, when client disappears
 mqttc.will_set(config.MQTT_TOPIC_TESTAMENT, json.dumps({'available': False, 'deviceid': args.deviceid, 'last': 'will'}), config.MQTT_QOS, retained)
-
 
 print('Press Ctrl+C to quit')
 if sys.platform == 'linux':
