@@ -1,5 +1,4 @@
 # !/usr/bin/python
-
 # class for mqtt connection
 __author__ = 'cygairko'
 
@@ -9,7 +8,9 @@ import sys
 import time
 import argparse
 import os
+
 import config
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-d', '--deviceid', help='provide device Id', default=config.DEVICE_ID, nargs='?')
@@ -138,11 +139,11 @@ mqttc.on_publish = on_publish
 mqttc.on_subscribe = on_subscribe
 mqttc.on_disconnect = on_disconnect
 
-#mqttc.connect(config.MQTT_HOST, config.MQTT_PORT)
+# mqttc.connect(config.MQTT_HOST, config.MQTT_PORT)
 mqttc.connect_async(config.MQTT_HOST, config.MQTT_PORT)
 
 # Uncomment to enable debug messages
-#mqttc.on_log = on_log
+# mqttc.on_log = on_log
 
 #mosq.subscribe("$SYS/#", 0)
 
