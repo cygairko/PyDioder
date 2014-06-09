@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213cfd40-6243-4d69-827d-89cb9bb52fd6" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\Misc\workspace\pyCharm\PyDioder\light_mock.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/colorlight.py" afterPath="$PROJECT_DIR$/colorlight.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mqtt.py" afterPath="$PROJECT_DIR$/mqtt.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -31,10 +29,10 @@
       <file leaf-file-name="mqtt.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mqtt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08415841" vertical-offset="714" max-vertical-offset="2788">
-              <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2788">
+              <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
               <folding>
-                <element signature="e#72#83#0" expanded="true" />
+                <element signature="e#71#82#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -615,7 +613,11 @@
       <created>1402261945731</created>
       <updated>1402261945731</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="added mockup mode possibility via command line commands">
+      <created>1402275262315</created>
+      <updated>1402275262315</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -688,7 +690,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2618">
           <caret line="45" column="66" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
           <folding>
-            <element signature="e#72#83#0" expanded="true" />
+            <element signature="e#71#82#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -883,10 +885,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08415841" vertical-offset="714" max-vertical-offset="2788">
-          <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2788">
+          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
           <folding>
-            <element signature="e#72#83#0" expanded="true" />
+            <element signature="e#71#82#0" expanded="true" />
           </folding>
         </state>
       </provider>
