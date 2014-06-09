@@ -84,6 +84,7 @@ def on_message(mosq, obj, msg):
                 send_statusupdate(mosq)
             elif function == 'switch':
                 led.setOn(decoded['state'])
+                send_statusupdate(mosq)
             else:
                 print('no valid function')
         else:
