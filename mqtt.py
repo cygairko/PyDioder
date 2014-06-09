@@ -56,7 +56,7 @@ def on_connect(mosq, obj, rc):
     # initial status update to have correct retained message in statusupdate topic
     send_statusupdate(mqttc)
     # subscribe to topic for incoming requests
-    mqttc.subscribe(config.MQTT_TOPIC_REQUESTS, config.MQTT_QOS)
+    mqttc.subscribe(config.MQTT_TOPIC_BASE + '/' + args.deviceid + '/+', config.MQTT_QOS)
 
     print("rc: " + str(rc))
 

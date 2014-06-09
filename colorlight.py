@@ -61,6 +61,9 @@ class Led:
         self._blue = blue_in
         if self._red == 0 and self._green == 0 and self._blue == 0:
             self._isOn = False
+        else:
+            self._isOn = True
+
         self._changeColor(red_in, green_in, blue_in)
 
         return True
