@@ -1,4 +1,4 @@
-#!/usr/bin/python
+# !/usr/bin/python
 # class for mqtt connection
 __author__ = 'cygairko'
 
@@ -44,7 +44,7 @@ notretained = False
 
 def on_connect(mosq, obj, rc):
     # set last will and testament
-    # mosq.will_set(config.MQTT_TOPIC_TESTAMENT, json.dumps({'setavailable': False, 'deviceid': config.DEVICE_ID, 'last': 'will'}), config.MQTT_QOS, retained)
+    # mosq.will_set(config.MQTT_TOPIC_TESTAMENT, json.dumps({'setavailable': False, 'deviceid': args.deviceid, 'last': 'will'}), config.MQTT_QOS, retained)
 
     # register at server
     # registration will be ignored, if already done
@@ -73,7 +73,7 @@ def on_message(mosq, obj, msg):
     decoded = json.loads(msg.payload.decode('utf-8'))
     function = decoded['function']
 
-    if target == config.DEVICE_ID:
+    if target == args.deviceid:
         if issue == 'status':
             if function == 'setcolor':
                 color = [int(decoded['color'][0]), int(decoded['color'][1]), int(decoded['color'][2])]
@@ -82,6 +82,8 @@ def on_message(mosq, obj, msg):
                 print('set ' + str(led.getColor()))
             elif function == 'getcolor':
                 send_statusupdate(mosq)
+            elif function == 'switch':
+                led.setOn(decoded['state'])
             else:
                 print('no valid function')
         else:
@@ -119,7 +121,7 @@ def signal_handler(signal, frame):
 
 def send_statusupdate(mosq):
     color = led.getColor()
-    mosq.publish(config.MQTT_TOPIC_STATUSUPDATE, json.dumps({'function': 'update', 'deviceid': args.deviceid, 'color': color}), config.MQTT_QOS, retained)
+    mosq.publish(config.MQTT_TOPIC_STATUSUPDATE, json.dumps({'function': 'update', 'deviceid': args.deviceid, 'state': led.isOn(), 'color': color}), config.MQTT_QOS, retained)
 
 
 # If you want to use a specific client id, use

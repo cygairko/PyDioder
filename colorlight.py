@@ -61,21 +61,24 @@ class Led:
         self._blue = blue_in
         if self._red == 0 and self._green == 0 and self._blue == 0:
             self._isOn = False
-        self.changeColor(red_in, green_in, blue_in)
+        self._changeColor(red_in, green_in, blue_in)
 
         return True
 
-    def switchOn(self, switch):
+    def setOn(self, switch):
         self._isOn = switch
         # switch lights off (color = [0, 0, 0]), but keep actual color in mind
         if switch:
-            self.changeColor(self._red, self._green, self._blue)
+            self._changeColor(self._red, self._green, self._blue)
         elif not switch:
-            self.changeColor(0, 0, 0)
+            self._changeColor(0, 0, 0)
         else:
             print('switch is not boolean')
 
-    def changeColor(self, red_in, green_in, blue_in):
+    def isOn(self):
+        return self._isOn
+
+    def _changeColor(self, red_in, green_in, blue_in):
         if not self.mockup:
             # keep self values, just modify output values
             # change pwm duty cycles
@@ -83,7 +86,6 @@ class Led:
             self._red_pwm.ChangeDutyCycle(red_in * 100.0 / 255.0)
             self._green_pwm.ChangeDutyCycle(green_in * 100.0 / 255.0)
             self._blue_pwm.ChangeDutyCycle(blue_in * 100.0 / 255.0)
-
 
     def printColor(self):
         print("r g b :", self._red, self._green, self._blue)
