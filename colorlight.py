@@ -94,4 +94,5 @@ class Led:
         print("r g b :", self._red, self._green, self._blue)
 
     def getColor(self):
+        print(self._red, self._green, self._blue)
         return [self._red, self._green, self._blue]

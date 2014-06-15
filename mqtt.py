@@ -48,7 +48,7 @@ def on_connect(mosq, obj, rc):
 
     # register at server
     # registration will be ignored, if already done
-    mqttc.publish(config.MQTT_TOPIC_SERVER + '/registration', json.dumps({'function': 'register', 'scope': config.SCOPE, 'deviceid': args.deviceid}), config.MQTT_QOS, retained)
+    mqttc.publish(config.MQTT_TOPIC_SERVER + '/registration', get_device_info_json('update'), config.MQTT_QOS, retained)
 
     # "login" at server > set available true
     mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'available': True, 'deviceid': args.deviceid}), config.MQTT_QOS, retained)
@@ -121,9 +121,11 @@ def signal_handler(signal, frame):
 
 
 def send_statusupdate(mosq):
-    color = led.getColor()
-    mosq.publish(config.MQTT_TOPIC_STATUSUPDATE, json.dumps({'function': 'update', 'deviceid': args.deviceid, 'state': led.isOn(), 'color': color}), config.MQTT_QOS, retained)
+    mosq.publish(config.MQTT_TOPIC_STATUSUPDATE, get_device_info_json('update'), config.MQTT_QOS, retained)
 
+
+def get_device_info_json(function):
+    return json.dumps({'function': function, 'deviceid': args.deviceid, 'state': led.isOn(), 'color': led.getColor()})
 
 # If you want to use a specific client id, use
 # mqttc = mosquitto.Mosquitto("client-id")
