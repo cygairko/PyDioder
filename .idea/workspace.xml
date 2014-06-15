@@ -29,8 +29,8 @@
       <file leaf-file-name="mqtt.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mqtt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24257426" vertical-offset="703" max-vertical-offset="2839">
-              <caret line="50" column="96" selection-start-line="50" selection-start-column="96" selection-end-line="50" selection-end-column="96" />
+            <state vertical-scroll-proportion="0.71947193" vertical-offset="1723" max-vertical-offset="2839">
+              <caret line="127" column="139" selection-start-line="127" selection-start-column="139" selection-end-line="127" selection-end-column="139" />
               <folding>
                 <element signature="e#71#82#0" expanded="true" />
               </folding>
@@ -645,7 +645,11 @@
       <created>1402863783160</created>
       <updated>1402863783160</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="send color also at registration">
+      <created>1402864665931</created>
+      <updated>1402864665931</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -916,8 +920,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mqtt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24257426" vertical-offset="703" max-vertical-offset="2839">
-          <caret line="50" column="96" selection-start-line="50" selection-start-column="96" selection-end-line="50" selection-end-column="96" />
+        <state vertical-scroll-proportion="0.71947193" vertical-offset="1723" max-vertical-offset="2839">
+          <caret line="127" column="139" selection-start-line="127" selection-start-column="139" selection-end-line="127" selection-end-column="139" />
           <folding>
             <element signature="e#71#82#0" expanded="true" />
           </folding>
