@@ -48,7 +48,7 @@ def on_connect(mosq, obj, rc):
 
     # register at server
     # registration will be ignored, if already done
-    mqttc.publish(config.MQTT_TOPIC_SERVER + '/registration', get_device_info_json('update'), config.MQTT_QOS, retained)
+    mqttc.publish(config.MQTT_TOPIC_SERVER + '/registration', get_device_info_json('registration'), config.MQTT_QOS, retained)
 
     # "login" at server > set available true
     mqttc.publish(config.MQTT_TOPIC_SERVER + '/availability', json.dumps({'available': True, 'deviceid': args.deviceid}), config.MQTT_QOS, retained)
