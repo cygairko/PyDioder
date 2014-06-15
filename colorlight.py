@@ -32,9 +32,9 @@ class Led:
             self._blue_pwm = GPIO.PWM(self.PORT_BLUE, self.FREQ)
 
         # colors
-        self._red = None
-        self._green = None
-        self._blue = None
+        self._red = 0
+        self._green = 0
+        self._blue = 0
         self._isOn = False
 
     # cleanup PWM and GPIO environment
