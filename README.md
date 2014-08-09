@@ -14,15 +14,13 @@ Set up at least
 
 Then just execute mqtt.py as follows:
 On Raspberry Pi (as root because GPIO connection will not work without)
-````
-#!bash
+````bash
 
 sudo python ./mqtt.py
 ````
 
-or in mockup mode on any machine with Python installed (calling with ````-d <device_id````:
-````
-#!bash
+or in mockup mode on any machine with Python installed (calling with ````-d <device_id>```` will overwrite ````DEVICE_ID```` in config.py):
+````bash
 
 python ./mqtt.py -m
 ````

@@ -29,8 +29,8 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41928253" vertical-offset="0" max-vertical-offset="892">
-              <caret line="22" column="86" selection-start-line="22" selection-start-column="86" selection-end-line="22" selection-end-column="86" />
+            <state vertical-scroll-proportion="0.4002242" vertical-offset="0" max-vertical-offset="892">
+              <caret line="21" column="138" selection-start-line="21" selection-start-column="138" selection-end-line="21" selection-end-column="138" />
               <folding />
             </state>
           </provider>
@@ -665,7 +665,11 @@
       <created>1407545846170</created>
       <updated>1407545846171</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="readme changes">
+      <created>1407545904326</created>
+      <updated>1407545904326</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -965,8 +969,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41928253" vertical-offset="0" max-vertical-offset="892">
-          <caret line="22" column="86" selection-start-line="22" selection-start-column="86" selection-end-line="22" selection-end-column="86" />
+        <state vertical-scroll-proportion="0.4002242" vertical-offset="0" max-vertical-offset="892">
+          <caret line="21" column="138" selection-start-line="21" selection-start-column="138" selection-end-line="21" selection-end-column="138" />
           <folding />
         </state>
       </provider>
