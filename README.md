@@ -20,7 +20,7 @@ On Raspberry Pi (as root because GPIO connection will not work without)
 sudo python ./mqtt.py
 ````
 
-or in mockup mode on any machine with Python installed:
+or in mockup mode on any machine with Python installed (calling with ````-d <device_id````:
 ````
 #!bash
 
