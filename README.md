@@ -7,6 +7,7 @@ To connect [IKEA DIODER](http://www.ikea.com/de/de/catalog/products/40192361/) t
 
 Configuration is done in config.py
 Set up at least
+
 * MQTT_HOST
 * DEVICE_ID (has to be unique for each actuator)
 * SERVER_ID (to match servers ID)
